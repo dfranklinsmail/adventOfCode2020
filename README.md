@@ -1,0 +1,1 @@
+This repository stores the solutions to this years advent of code challenge using the oCaml programming language. The challenges for each day can be found here, https://github.com/dfranklinsmail/adventOfCode2020.git
