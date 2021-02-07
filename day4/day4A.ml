@@ -3,6 +3,7 @@ open List
 open String
 
 let file = "input.data"
+let flag = true
 
 let passports = 
     let iChannel = open_in file in
@@ -11,6 +12,7 @@ let passports =
     let rec loop currentPassport acc = 
         match try_read () with
         | Some s -> 
+                printf "The string is %s\n" s;
                 if (String.length s) = 0 then
                     loop "" (currentPassport::acc)
                 else

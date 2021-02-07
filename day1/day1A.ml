@@ -15,3 +15,15 @@ let rec searchForPair number numbers index =
         end
 
 let file = "input.data"
+
+let read_lines = 
+    let iChannel = open_in file in
+    let try_read () =
+        try Some (input_line iChannel) with End_of_file -> None in
+    let rec loop acc = match try_read () with
+        | Some s -> 
+                let aNumber = to_int (of_string s) in
+                    let _ = searchForPair aNumber acc 0 in
+                       loop (aNumber::acc)
+        | None -> close_in iChannel; [] in
+    loop []
